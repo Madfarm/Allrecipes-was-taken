@@ -9,19 +9,19 @@
 
 
 ### Role Assignment
-> Git Owner       - Anthony 
-> Project Manager - Kate
-> Researcher      - Kelvin & Anthony
-> Backend         - All of us
-> Designer        - Anthony
-> Frontend        - Kate & Kelvin
-> Documentation   - Anthony
+> - Git Owner       - Anthony 
+> - Project Manager - Kate
+> - Researcher      - Kelvin & Anthony
+> - Backend         - All of us
+> - Designer        - Anthony
+> - Frontend        - Kate & Kelvin
+> - Documentation   - Anthony
 
 
 ## Day One
 ### Goals
-> Oauth
-> Recipes & User model
-> Routing
-> Recipe controller
-> Index view
+> - Oauth
+> - Recipes & User model
+> - Routing
+> - Recipe controller
+> - Index view
