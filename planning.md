@@ -2,4 +2,4 @@
 
 ## ERDs
 
-![MVP ERD](/assets/images/MVP-ERD.png)
+![MVP ERD](/public/images/MVP-ERD.png)
