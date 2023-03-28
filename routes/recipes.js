@@ -9,6 +9,8 @@ router.route('/')
 
 router.get('/new', ensureLoggedIn, recipesCtrl.new)
 
+router.get('/:id', recipesCtrl.show)
+
 
 
 
