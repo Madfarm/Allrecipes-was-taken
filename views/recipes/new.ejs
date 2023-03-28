@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+    <form action="/recipes" method="POST">
+        <label>Recipe Name
+            <input type="text" placeholder="e.g. Shrimp Scampi" name="title">
+        </label><br>
+
+        <label>Ingredients:
+            <input type="text" placeholder="Add an ingredient" name="ingredients">
+        </label><br>
+
+        <label>Directions:
+            <input type="text" placeholder="e.g. Preheat oven to 400F" name="directions">
+        </label><br>
+
+        <select name="difficulty">Difficulty
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select><br>
+
+        <select name="category">Category
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="dessert">Dessert</option>
+        </select><br>
+
+        <select name="category2">Category
+            <option value="vegetarian">Vegetarian</option>
+            <option value="pescatarian">Pescatarian</option>
+            <option value="vegan">Vegan</option>
+        </select><br>
+
+        <label>Time:
+            <input type="number" placeholder="in minutes" name="time">
+        </label><br>
+
+        <button type="submit">Add Recipe</button>
+
+    </form>
+
+</body>
+</html>

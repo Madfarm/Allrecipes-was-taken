@@ -1,8 +1,12 @@
 const express = require('express')
-const recipesController = require('../controllers/recipes')
+const recipesCtrl = require('../controllers/recipes')
 const router = express.Router()
 
-router.get('/',recipesController.index)
+router.route('/')
+.get(recipesCtrl.index)
+.post(recipesCtrl.create)
+
+router.get('/new', recipesCtrl.new)
 
 
 
