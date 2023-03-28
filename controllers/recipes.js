@@ -10,9 +10,18 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  res.render("recipes/index", {
-    title: "All Recipes"
-  });
+  Recipe.find({})
+  .then(function(recipes){
+    res.render("recipes/index", {
+      title: "All Recipes",
+      recipes
+    });
+  })
+  .catch(function(err){
+    next(err)
+  })
+
+  
 }
 
 function newRecipe(req, res, next){
