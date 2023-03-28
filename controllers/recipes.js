@@ -1,7 +1,8 @@
 const Recipe = require("../models/Recipe");
 module.exports = {
   index,
-  new: createRecipe
+  new: newRecipe,
+  create
 };
 
 function index(req, res, next) {
@@ -10,8 +11,13 @@ function index(req, res, next) {
   });
 }
 
-function createRecipe(req, res, next){
+function newRecipe(req, res, next){
   res.render('recipes/new', {
     title: "Add a Recipe"
   })
 }
+
+function create(req, res){
+  
+}
+

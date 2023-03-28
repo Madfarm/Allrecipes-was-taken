@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.route('/')
 .get(recipesCtrl.index)
-
+.post(recipesCtrl.create)
 
 router.get('/new', recipesCtrl.new)
 
