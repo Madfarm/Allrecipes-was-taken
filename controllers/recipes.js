@@ -44,9 +44,16 @@ function create(req, res){
 }
 
 function show(req, res, next){
+  console.log('beginning show function')
+
   Recipe.findById(req.params.id)
   .then(function(recipe){
+    console.log(`successfully found recipe at id: ${recipe._id}`)
 
+    res.render('recipes/show',{
+      title: recipe.title,
+      recipe
+    })
   })
   .catch(function(err){
     next(err)
