@@ -5,7 +5,8 @@ const Recipe = require("../models/Recipe");
 module.exports = {
   index,
   new: newRecipe,
-  create
+  create,
+  show
 };
 
 function index(req, res, next) {
@@ -32,14 +33,23 @@ function create(req, res){
     req.body.directions = req.body.directions.split(',').map(function (direction) { return direction.trim() })
 
     Recipe.create(req.body)
-    .then(function(recipe){
-      console.log(`new doc _id: ${recipe._id}`)
-      res.send("Creation working")
+    .then(function(newRecipe){
+      res.redirect(`/recipes/${newRecipe._id}`)
     })
     .catch(function(err){
-      console.log(err)
+      next(err)
     })
 
 
+}
+
+function show(req, res, next){
+  Recipe.findById(req.params.id)
+  .then(function(recipe){
+
+  })
+  .catch(function(err){
+    next(err)
+  })
 }
 
