@@ -32,6 +32,13 @@ const recipeSchema = new mongoose.Schema(
       type: Number,
       min: 0,
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    userName: String,
+    userAvatar: String
   },
   {
     timestamps: true,
