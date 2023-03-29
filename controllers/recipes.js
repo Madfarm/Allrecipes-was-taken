@@ -1,6 +1,16 @@
 const Recipe = require("../models/Recipe");
 
+//Helper function for parsing queries and making the filter more secure
+function parseQuery(obj, options){
+  const output = {}
 
+  for(let key in obj){
+    if (options.includes(key)&& obj[key]){
+      output[key] = obj[key]
+    }
+    return output
+  }
+}
 
 module.exports = {
   index,
@@ -8,11 +18,13 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: destroyRecipe
 };
 
 function index(req, res, next) {
-  Recipe.find({})
+  if(req.query){
+    Recipe.find(parseQuery(req.query, ['category', 'category2', 'difficulty']))
     .then(function (recipes) {
       res.render("recipes/index", {
         title: "All Recipes",
@@ -22,6 +34,21 @@ function index(req, res, next) {
     .catch(function (err) {
       next(err)
     })
+
+  } else {
+    Recipe.find({})
+    .then(function (recipes) {
+      res.render("recipes/index", {
+        title: "All Recipes",
+        recipes
+      });
+    })
+    .catch(function (err) {
+      next(err)
+    })
+  }
+
+  
 
 
 }
@@ -55,12 +82,8 @@ function create(req, res) {
 }
 
 function show(req, res, next) {
-  console.log('beginning show function')
-
   Recipe.findById(req.params.id)
     .then(function (recipe) {
-      console.log(`successfully found recipe at id: ${recipe._id}`)
-
       res.render('recipes/show', {
         title: recipe.title,
         recipe
@@ -106,7 +129,16 @@ function update(req, res, next){
         res.redirect(`/recipes/${req.params.id}`)
       })
 
-    
+}
+
+function destroyRecipe(req,res, next){
+  Recipe.deleteOne({_id: req.params.id})
+  .then(function(){
+    res.redirect(`/users/${req.user._id}/myrecipes`)
+  })
+  .catch(function(err){
+    next(err)
+  })
 }
 
  

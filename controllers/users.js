@@ -10,7 +10,7 @@ function index(req, res, next) {
         .then(function (userRecipes) {
             res.render('users/index', {
                 userRecipes,
-                title: `${userRecipes[0].userName}'s Recipes`
+                title: `${req.user.name}'s Recipes`
             })
         }).catch(function (err) {
             next(err)

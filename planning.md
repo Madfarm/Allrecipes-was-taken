@@ -31,4 +31,4 @@
 > - My Recipes page
 > - Edit
 > - Delete
-> - Add reviews
+> - Filter functionality on index page

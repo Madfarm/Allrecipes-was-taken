@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
 
-
+<% if(userRecipes.length == 0) {%>
+    <h3>You have no recipes yet</h3>
+<% } else { %>
 
     <% userRecipes.forEach(function(recipe) { %>
         <div>
@@ -39,4 +41,11 @@
         <form action="/recipes/<%= recipe._id %>/edit" method="GET">
             <button type="submit">Edit Recipe</button>
         </form>
+
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete This Recipe</button>
+        </form>
+
         <% }) %>
+
+<% } %>
