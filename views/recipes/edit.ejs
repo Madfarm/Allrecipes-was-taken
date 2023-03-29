@@ -26,24 +26,24 @@
 
         <select name="category">Category
 
-            <%  let catOptions=[ "breakfast" , "lunch" , "dinner" , "dessert" ]; 
-            let catSelected = recipe.category
-            for (let i=0; i < catOptions.length; i++ ) {
+            <%  options=[ "breakfast" , "lunch" , "dinner" , "dessert" ]; 
+            selected = recipe.category
+            for (let i=0; i < options.length; i++ ) {
      
             %>
-               <option value="<%= catOptions[i]%>" <%=catOptions[i] == catSelected ? 'selected' : "" %>><%= catOptions[i]%></option>
+               <option value="<%= options[i]%>" <%=options[i] == selected ? 'selected' : "" %>><%= options[i]%></option>
                
             <% } %>
         </select> <br>
 
         <select name="category2">Category
 
-            <%  let cat2Options=["vegetarian", "pescatarian", "vegan"]; 
-            let cat2Selected = recipe.category2
-            for (let i=0; i < cat2Options.length; i++ ) {
+            <%  options=["vegetarian", "pescatarian", "vegan"]; 
+            selected = recipe.category2
+            for (let i=0; i < options.length; i++ ) {
      
             %>
-               <option value="<%= cat2Options[i]%>" <%=cat2Options[i] == cat2Selected ? 'selected' : "" %>><%= cat2Options[i]%></option>
+               <option value="<%= options[i]%>" <%=options[i] == selected ? 'selected' : "" %>><%= options[i]%></option>
                
             <% } %>
 
@@ -53,7 +53,7 @@
             <input type="number" name="time" value="<%= recipe.time %>">
         </label><br>
 
-        <button type="submit">Add Recipe</button>
+        <button type="submit">Update Recipe</button>
 
     </form>
 
