@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+    <form action="/recipes" method="POST">
+        <label>Recipe Name
+            <input type="text" placeholder="e.g. Shrimp Scampi" name="title" value=" <%= recipe.title%>">
+        </label><br>
+
+        <label>Ingredients:
+            <input type="text" placeholder="Add ingredients seperated by commas" name="ingredients"
+                value="<%= recipe.ingredients.join(', ')%>">
+        </label><br>
+
+        <label>Directions:
+            <input type="text" placeholder="Add directions seperated by commas" name="directions"
+                value="<%= recipe.directions.join(', ')%>">
+        </label><br>
+
+
+        <select name="difficulty">Difficulty
+            <% let options=[ 'easy' , 'medium' , 'hard'];
+            let selected = recipe.difficulty
+            for (let i=0; i < options.length; i++ ) {
+            %>
+               <option value="<%= options[i]%>" <%=options[i] == selected ? 'selected' : "" %>><%= options[i]%></option>
+            <% } %>
+        </select><br>
+
+        <select name="category">Category
+
+            <%  let catOptions=[ "breakfast" , "lunch" , "dinner" , "dessert" ]; 
+            let catSelected = recipe.category
+            for (let i=0; i < catOptions.length; i++ ) {
+     
+            %>
+               <option value="<%= catOptions[i]%>" <%=catOptions[i] == catSelected ? 'selected' : "" %>><%= catOptions[i]%></option>
+               
+            <% } %>
+        </select> <br>
+
+        <select name="category2">Category
+
+            <%  let cat2Options=["vegetarian", "pescatarian", "vegan"]; 
+            let cat2Selected = recipe.category2
+            for (let i=0; i < cat2Options.length; i++ ) {
+     
+            %>
+               <option value="<%= cat2Options[i]%>" <%=cat2Options[i] == cat2Selected ? 'selected' : "" %>><%= cat2Options[i]%></option>
+               
+            <% } %>
+
+        </select><br>
+
+        <label>Time:
+            <input type="number" name="time" value="<%= recipe.time %>">
+        </label><br>
+
+        <button type="submit">Add Recipe</button>
+
+    </form>
+
+    </body>
+
+    </html>
