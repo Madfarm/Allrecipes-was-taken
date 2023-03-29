@@ -13,7 +13,13 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  Recipe.find({})
+  if (req.query){
+    console.log(req.query)
+    const options = {}
+
+    
+
+    Recipe.find(req.query)
     .then(function (recipes) {
       res.render("recipes/index", {
         title: "All Recipes",
@@ -23,6 +29,21 @@ function index(req, res, next) {
     .catch(function (err) {
       next(err)
     })
+
+  } else {
+    Recipe.find({})
+    .then(function (recipes) {
+      res.render("recipes/index", {
+        title: "All Recipes",
+        recipes
+      });
+    })
+    .catch(function (err) {
+      next(err)
+    })
+  }
+
+  
 
 
 }

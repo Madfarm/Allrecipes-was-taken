@@ -1,5 +1,32 @@
 <%- include('../partials/header') %>
-    
+
+<div>
+    <h3>Filter</h3>
+<select name="difficulty">Difficulty
+    <option value=null></option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+</select><br>
+
+<select name="category">Category
+    <option value=null></option>
+    <option value="breakfast">Breakfast</option>
+    <option value="lunch">Lunch</option>
+    <option value="dinner">Dinner</option>
+    <option value="dessert">Dessert</option>
+</select><br>
+
+<select name="category2">Category'
+    <option value=null></option>
+    <option value="vegetarian">Vegetarian</option>
+    <option value="pescatarian">Pescatarian</option>
+    <option value="vegan">Vegan</option>
+</select><br>
+</div>    
+
+href="/recipes<%= %>"
+
 <% recipes.forEach(function(r) { %>
     <a href="/recipes/<%= r._id %>">
     <div>
