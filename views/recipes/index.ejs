@@ -1,4 +1,16 @@
 <%- include('../partials/header') %>
     
+<% recipes.forEach(function(r) { %>
+    <a href="/recipes/<%= r._id %>">
+        <div class="vstack gap-3">
+            <div class="p-2"><h3><%= r.title %></h3> </div>
+            <div class="p-2"><h4><%= r.difficulty %></h4></div>
+    </div>
+    </a>
+<% }) %>
+
+
+
+
 </body>
 </html>

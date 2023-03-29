@@ -1,42 +1,44 @@
 <%- include('../partials/header') %>
     <form action="/recipes" method="POST">
+    
         <label>Recipe Name
             <input type="text" placeholder="e.g. Shrimp Scampi" name="title">
         </label><br>
 
         <label>Ingredients:
-            <input type="text" placeholder="Add an ingredient" name="ingredients">
+            <input type="text" placeholder="Add ingredients seperated by commas" name="ingredients">
         </label><br>
 
         <label>Directions:
-            <input type="text" placeholder="e.g. Preheat oven to 400F" name="directions">
+            <input type="text" placeholder="Add directions seperated by commas" name="directions">
         </label><br>
 
-        <select name="difficulty">Difficulty
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select><br>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>Difficulty</option>
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+          </select><br>
 
-        <select name="category">Category
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="dessert">Dessert</option>
-        </select><br>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>Meal Time</option>
+            <option value="breakfast">breakfast</option>
+            <option value="lunch">lunch</option>
+            <option value="dinner">dinner</option>
+          </select><br>
 
-        <select name="category2">Category
-            <option value="vegetarian">Vegetarian</option>
-            <option value="pescatarian">Pescatarian</option>
-            <option value="vegan">Vegan</option>
-        </select><br>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>Meal Type</option>
+            <option value="vegetarian">vegetarian</option>
+            <option value="pescatarian">pescatarian</option>
+            <option value="vegan">vegan</option>
+          </select><br>
 
         <label>Time:
             <input type="number" placeholder="in minutes" name="time">
         </label><br>
 
-        <button type="submit">Add Recipe</button>
-
+        <button type="submit" class="btn btn-primary btn-lg">Add Recipe</button>
     </form>
 
 </body>
