@@ -85,7 +85,10 @@ function edit(req, res, next) {
 }
 
 function update(req, res, next){
-    const filter = {_id: req.params.id}
+    const filter = {
+        _id: req.params.id, 
+        user: req.user._id
+    }
     const update = {
         title: req.body.title,
         ingredients: req.body.ingredients,
@@ -100,7 +103,7 @@ function update(req, res, next){
         res.redirect(`/recipes/${recipe._id}`)
     })
     .catch(function (err) {
-        next(err)
+        res.redirect(`/recipes/${req.params.id}`)
       })
 
     
