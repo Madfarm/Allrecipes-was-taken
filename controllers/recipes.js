@@ -7,7 +7,8 @@ module.exports = {
   new: newRecipe,
   create,
   show,
-  edit
+  edit,
+  update
 };
 
 function index(req, res, next) {
@@ -82,3 +83,31 @@ function edit(req, res, next) {
       next(err)
     })
 }
+
+function update(req, res, next){
+    const filter = {
+        _id: req.params.id, 
+        user: req.user._id
+    }
+    const update = {
+        title: req.body.title,
+        ingredients: req.body.ingredients,
+        directions: req.body.directions,
+        difficulty: req.body.difficulty,
+        category: req.body.category,
+        category2: req.body.category2,
+        time: req.body.time
+    }
+    Recipe.findOneAndUpdate(filter,update)
+    .then(function(recipe){
+        res.redirect(`/recipes/${recipe._id}`)
+    })
+    .catch(function (err) {
+        res.redirect(`/recipes/${req.params.id}`)
+      })
+
+    
+}
+
+ 
+
