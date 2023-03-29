@@ -1,6 +1,15 @@
 const Recipe = require("../models/Recipe");
 
+function parseQuery(obj, options){
+  const output = {}
 
+  for(let key in obj){
+    if (options.includes(key)&& obj[key]){
+      output[key] = obj[key]
+    }
+    return output
+  }
+}
 
 module.exports = {
   index,
@@ -13,12 +22,7 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  if (req.query){
-    console.log(req.query)
-    const options = {}
-
-    
-
+  if(req.query){
     Recipe.find(req.query)
     .then(function (recipes) {
       res.render("recipes/index", {
