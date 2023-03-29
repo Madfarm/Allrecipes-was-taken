@@ -8,7 +8,8 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: destroyRecipe
 };
 
 function index(req, res, next) {
@@ -106,7 +107,16 @@ function update(req, res, next){
         res.redirect(`/recipes/${req.params.id}`)
       })
 
-    
+}
+
+function destroyRecipe(req,res, next){
+  Recipe.deleteOne({_id: req.params.id})
+  .then(function(){
+    res.redirect(`/${res.user._id}/myrecipes`)
+  })
+  .catch(function(err){
+    next(err)
+  })
 }
 
  

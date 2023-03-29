@@ -39,4 +39,9 @@
         <form action="/recipes/<%= recipe._id %>/edit" method="GET">
             <button type="submit">Edit Recipe</button>
         </form>
+
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete This Recipe</button>
+        </form>
+
         <% }) %>

@@ -14,6 +14,7 @@ router.get('/:id/edit', recipesCtrl.edit)
 router.route('/:id')
 .get(recipesCtrl.show)
 .put(recipesCtrl.update)
+.delete(recipesCtrl.delete)
 
 
 
