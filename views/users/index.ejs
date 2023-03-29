@@ -34,6 +34,9 @@
             <%= recipe.category2 %>
         </div>
         <div>
-            <%= recipe.time %>
+            <%= recipe.time %> minutes
         </div>
+        <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+            <button type="submit">Edit Recipe</button>
+        </form>
         <% }) %>
