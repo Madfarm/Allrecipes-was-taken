@@ -25,3 +25,10 @@
 > - Routing
 > - Recipe controller
 > - Index view
+
+# Day Two
+### Goals
+> - My Recipes page
+> - Edit
+> - Delete
+> - Add reviews
