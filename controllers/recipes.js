@@ -112,7 +112,7 @@ function update(req, res, next){
 function destroyRecipe(req,res, next){
   Recipe.deleteOne({_id: req.params.id})
   .then(function(){
-    res.redirect(`/${res.user._id}/myrecipes`)
+    res.redirect(`/users/${req.user._id}/myrecipes`)
   })
   .catch(function(err){
     next(err)
