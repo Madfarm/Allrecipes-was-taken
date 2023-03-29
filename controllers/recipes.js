@@ -1,5 +1,6 @@
 const Recipe = require("../models/Recipe");
 
+//Helper function for parsing queries and making the filter more secure
 function parseQuery(obj, options){
   const output = {}
 
@@ -23,7 +24,7 @@ module.exports = {
 
 function index(req, res, next) {
   if(req.query){
-    Recipe.find(req.query)
+    Recipe.find(parseQuery(req.query, ['category', 'category2', 'difficulty']))
     .then(function (recipes) {
       res.render("recipes/index", {
         title: "All Recipes",
