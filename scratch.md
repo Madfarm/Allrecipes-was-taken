@@ -15,3 +15,21 @@ in the index routing, controller function
         }
 
 
+### Possible Names
+
+What's Cooking?
+Recipe Adventure
+Allrecipes But Ours
+Just The Best Recipes
+3..2..1 Cook!
+Node Nibbles
+Express Nibbles
+nuGit
+Recipe Expression
+Git Pull Recipes
+Recipe Paradise
+Cooks Against Documentation
+Sauted Mongoose
+Cooking My Way
+npm i recipes
+Kitchen Heroine
