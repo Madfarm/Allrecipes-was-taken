@@ -1,8 +1,20 @@
 const express = require('express')
-const recipesController = require('../controllers/recipes')
+const recipesCtrl = require('../controllers/recipes')
 const router = express.Router()
+const ensureLoggedIn = require('../configs/ensureLoggedIn')
 
-router.get('/',recipesController.index)
+router.route('/')
+.get(recipesCtrl.index)
+.post(recipesCtrl.create)
+
+router.get('/new', ensureLoggedIn, recipesCtrl.new)
+
+router.get('/:id/edit', recipesCtrl.edit)
+
+router.route('/:id')
+.get(recipesCtrl.show)
+.put(recipesCtrl.update)
+.delete(recipesCtrl.delete)
 
 
 

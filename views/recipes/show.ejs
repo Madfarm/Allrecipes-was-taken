@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+    <h4><%= recipe.userName %></h4>
+
+    <div>
+        <img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer">
+    </div>
+
+
+    <div>
+        <%= recipe.title %>
+    </div>
+    <div>
+        <ul>
+        <% recipe.ingredients.forEach(function(i) { %>
+            <li><%= i %></li>
+        <% }) %>
+        </ul>
+    </div>
+    <div>
+        <ol>
+        <% recipe.directions.forEach(function(d) { %>
+            <li><%= d  %></li>
+        <% }) %>
+        </ol>
+    </div>
+    <div>
+        <%= recipe.difficulty %>
+    </div>
+    <div>
+        <%= recipe.category %>
+    </div>
+    <div>
+        <%= recipe.category2 %>
+    </div>
+    <div>
+        <%= recipe.time %> minutes
+    </div>
+
+
+
+
+
+
+
+    </body>
+
+    </html>

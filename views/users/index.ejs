@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<% if(userRecipes.length == 0) {%>
+    <h3>You have no recipes yet</h3>
+<% } else { %>
+
+    <% userRecipes.forEach(function(recipe) { %>
+        <div>
+            <%= recipe.title %>
+        </div>
+        <div>
+            <ul>
+                <% recipe.ingredients.forEach(function(i) { %>
+                    <li>
+                        <%= i %>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+        <div>
+            <ol>
+                <% recipe.directions.forEach(function(d) { %>
+                    <li>
+                        <%= d %>
+                    </li>
+                    <% }) %>
+            </ol>
+        </div>
+        <div>
+            <%= recipe.difficulty %>
+        </div>
+        <div>
+            <%= recipe.category %>
+        </div>
+        <div>
+            <%= recipe.category2 %>
+        </div>
+        <div>
+            <%= recipe.time %> minutes
+        </div>
+        <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+            <button type="submit">Edit Recipe</button>
+        </form>
+
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete This Recipe</button>
+        </form>
+
+        <% }) %>
+
+<% } %>
