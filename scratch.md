@@ -33,3 +33,8 @@ Sauted Mongoose
 Cooking My Way
 npm i recipes
 Kitchen Heroine
+
+
+
+
+Object.keys(req.query).length
