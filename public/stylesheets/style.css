@@ -23,30 +23,43 @@ body  {
    
   }
 
+  div.navbarContainer{
+    display: flex;
+    background-color: var(--yellow);
+    justify-content: flex-end;
+  }
+  
+  .navbarContainer > ul {
+    list-style-type: none;
+    overflow: hidden;
+     
+  
+   margin: 0;
+   padding: 0;
+    
+  }
+  
+  ul > li {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  ul > li > a {
+    display: inline;
+    text-decoration: none;
+    text-align: center;
+  
+  padding: 30px 20px;
+  }
+  
+  #logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 
-
-nav {
-  background-color: var(--yellow);
-  height: 80px;
-  display: flex;
-  justify-items: flex-end;
-  box-shadow: 0 0 25px 0 black;
-  border: 1px solid red;
-}
-nav * {
-  display: inline;
-}
-
-nav li a {
-  color: black;
-  text-decoration: none;
-}
-
-.logo {
-position: absolute;
-left: 2rem;
-}
-
+  
 
   
 
