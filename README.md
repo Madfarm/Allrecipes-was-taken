@@ -12,14 +12,16 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 
 ## B. User Stories
     As a user, I want to able to create recipes  
+  
 
     As a user, I want to be able to see my recipes and other people's recipes  
-
+  
+  
     As a user, I want to know how long a recipe will take to cook  
 
     As a user, I want to know how difficult a recipe is to cook before I buy all the ingredients  
 
-   As a user, I want to be able to update my own recipes  
+    As a user, I want to be able to update my own recipes  
 
     As a user, I want to be able to delete my own recipes  
 
