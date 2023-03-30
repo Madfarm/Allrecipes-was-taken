@@ -12,8 +12,8 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 
 ## B. User Stories
 `As a user, I want to able to create recipes`  
-  
-    As a user, I want to be able to see my recipes and other people's recipes  
+
+`As a user, I want to be able to see my recipes and other people's recipes`  
   
 
     As a user, I want to know how long a recipe will take to cook  
