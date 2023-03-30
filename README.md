@@ -19,13 +19,16 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 
 `As a user, I want to know how difficult a recipe is to cook before I buy all the ingredients`  
 
-`As a user, I want to be able to update my own recipes`  
 
-`As a user, I want to be able to delete my own recipes`  
 
-`As a user, I want to be able to filter the recipes by time of day(breakfast, lunch, dinner)`  
+    As a user, I want to be able to update my own recipes  
 
-`As a user, I want to be able to see recipes by category`  
+    As a user, I want to be able to delete my own recipes  
+
+    As a user, I want to be able to filter the recipes by time of day(breakfast, lunch, dinner)  
+
+    As a user, I want to be able to see recipes by category  
+      
 
 
 ## C. Images
