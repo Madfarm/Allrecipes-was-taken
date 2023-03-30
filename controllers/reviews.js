@@ -5,10 +5,10 @@ module.exports = {
 }
 
 function create(req, res, next) {
-    Recipe.findById(recipeId)
+    Recipe.findById(req.params.id)
         .then(function (recipe) {
             recipe.reviews.push(req.body)
-            return movie.save()
+            return recipe.save()
         })
         .then(function (recipe) {
             res.redirect(`/recipes/${recipe._id}`)
