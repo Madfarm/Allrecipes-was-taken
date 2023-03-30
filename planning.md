@@ -32,3 +32,9 @@
 > - Edit
 > - Delete
 > - Filter functionality on index page
+
+# Day Three
+> - Styling
+> - Build out the readme
+> - add reviews model
+
