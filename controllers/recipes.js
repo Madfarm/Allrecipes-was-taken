@@ -8,8 +8,8 @@ function parseQuery(obj, options){
     if (options.includes(key)&& obj[key]){
       output[key] = obj[key]
     }
-    return output
   }
+  return output
 }
 
 module.exports = {
@@ -23,7 +23,6 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  if(req.query){
     Recipe.find(parseQuery(req.query, ['category', 'category2', 'difficulty']))
     .then(function (recipes) {
       res.render("recipes/index", {
@@ -34,24 +33,7 @@ function index(req, res, next) {
     .catch(function (err) {
       next(err)
     })
-
-  } else {
-    Recipe.find({})
-    .then(function (recipes) {
-      res.render("recipes/index", {
-        title: "All Recipes",
-        recipes
-      });
-    })
-    .catch(function (err) {
-      next(err)
-    })
   }
-
-  
-
-
-}
 
 function newRecipe(req, res, next) {
   res.render('recipes/new', {
