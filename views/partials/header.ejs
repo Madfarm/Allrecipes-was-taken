@@ -18,28 +18,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light" style="background-color: #EDCD44;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/recipes">RecipeTracker</a>
-      <ul class="nav nav-pills">
+    <nav>
+    <div class="navbarContainer">
+      <a id="logo" href="/recipes">RecipeTracker</a>
+      <ul>
         <% if(user) { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/recipes/new">Add a recipe</a>
+          <li>
+            <a href="/recipes/new">Add a recipe</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/<%= user._id %>/myrecipes">My Recipes</a>
+          <li>
+            <a href="/users/<%= user._id %>/myrecipes">My Recipes</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
+          <li >
+            <a href="/logout">Logout</a>
           </li>
           <% } else { %>
-            <li class="nav-item">
-              <a class="nav-link" href="/auth/google">Login</a>
+            <li >
+              <a href="/auth/google">Login</a>
             </li>
             <% } %>
       </ul>
     </div>
-    </div>
+    
   </nav>
 
 

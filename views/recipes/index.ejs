@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div>
+<div class="filter">
     <form method="GET" action="/recipes">
     <h3>Filter</h3>
     <select name="difficulty">Difficulty
@@ -32,13 +32,15 @@
 
 
 <% recipes.forEach(function(r) { %>
+    <div class="recipes">
     <a href="/recipes/<%= r._id %>">
     <div>
         <h3><%= r.title %></h3>
        <h4><%= r.difficulty %></h4>
     </a>
-<% }) %>
 
+<% }) %>
+   </div>
 
 
 

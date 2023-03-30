@@ -1,20 +1,18 @@
-navbar
-  
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+  --blue: #81cad6;
+  --yellow: #edcd44;
+  --orange: #dc3e26;
 }
 
-a {
-  color: #00B7FF;
-  text-decoration: underline;
+* {
+  box-sizing: border-box;
+  ;
 }
 
-
-body :not(nav) {
+body  {
   
-    width: 600px;
+    width: 100%;
     margin: 0 auto;
     font-family: "Helvetica Neue", "Arial", sans-serif;
     font-style: italic;
@@ -22,7 +20,58 @@ body :not(nav) {
     font-variant-ligatures: normal;
     font-size: 2rem;
     letter-spacing: 1px;
+   
   }
+
+  div.navbarContainer{
+    display: flex;
+    background-color: var(--yellow);
+    justify-content: flex-end;
+  }
+  
+  .navbarContainer > ul {
+    list-style-type: none;
+    overflow: hidden;
+     
+  
+   margin: 0;
+   padding: 0;
+    
+  }
+  
+  ul > li {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  ul > li > a {
+    display: inline;
+    text-decoration: none;
+    text-align: center;
+  
+  padding: 30px 20px;
+  }
+  
+  #logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .filter {
+    border: 1px solid red;
+    display: inline;
+  }
+
+  .recipes {
+    border: 1px solid red;
+
+  }
+
+  
+
+  
 
   
     
