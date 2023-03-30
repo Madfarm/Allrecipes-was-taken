@@ -59,6 +59,16 @@ body  {
     left: 20px;
   }
 
+  .filter {
+    border: 1px solid red;
+    display: inline;
+  }
+
+  .recipes {
+    border: 1px solid red;
+
+  }
+
   
 
   
