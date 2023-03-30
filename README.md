@@ -11,19 +11,19 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 
 
 ## B. User Stories
-    As a user, I want to able to create recipes
+    As a user, I want to able to create recipes  
 
-    As a user, I want to be able to see my recipes and other people's recipes
+    As a user, I want to be able to see my recipes and other people's recipes  
 
-    As a user, I want to know how long a recipe will take to cook
+    As a user, I want to know how long a recipe will take to cook  
 
-    As a user, I want to know how difficult a recipe is to cook before I buy all the ingredients
+    As a user, I want to know how difficult a recipe is to cook before I buy all the ingredients  
 
-    As a user, I want to be able to update my own recipes
+    As a user, I want to be able to update my own recipes  
 
-    As a user, I want to be able to delete my own recipes
+    As a user, I want to be able to delete my own recipes  
 
-    As a user, I want to be able to filter the recipes by time of day(breakfast, lunch, dinner)
+    As a user, I want to be able to filter the recipes by time of day(breakfast, lunch, dinner)  
 
     As a user, I want to be able to see recipes by category
 
@@ -38,7 +38,8 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 
 
 ## D. Technologies Used
-> Front-End
+> Front-End  
+
     1. Bootstrap
 
 > Back-End
@@ -64,7 +65,7 @@ Project-name-placeholder's back-end architecture features a recipes router that 
 5. Click "Project-name-placeholder" to return to the home page that displays all the recipes made by every user. Using the dropdowns you can filter the recipes shown. Click any of the recipes shown to see the details of that recipe and leave a rating and comment
 
 ## F. Next Steps - Icebox Features via Users Stories
-    AAU I want to be able to customize my profile
+    As a user, I want to be able to customize my profile
 
-    AAU I want to have the option to delete my account
+    As a user, I want to have the option to delete my account
  
