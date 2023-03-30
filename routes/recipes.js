@@ -4,17 +4,17 @@ const router = express.Router()
 const ensureLoggedIn = require('../configs/ensureLoggedIn')
 
 router.route('/')
-.get(recipesCtrl.index)
-.post(recipesCtrl.create)
+    .get(recipesCtrl.index)
+    .post(ensureLoggedIn, recipesCtrl.create)
 
 router.get('/new', ensureLoggedIn, recipesCtrl.new)
 
-router.get('/:id/edit', recipesCtrl.edit)
+router.get('/:id/edit', ensureLoggedIn, recipesCtrl.edit)
 
 router.route('/:id')
-.get(recipesCtrl.show)
-.put(recipesCtrl.update)
-.delete(recipesCtrl.delete)
+    .get(recipesCtrl.show)
+    .put(ensureLoggedIn, recipesCtrl.update)
+    .delete(ensureLoggedIn, recipesCtrl.delete)
 
 
 
