@@ -8,8 +8,8 @@ function parseQuery(obj, options){
     if (options.includes(key)&& obj[key]){
       output[key] = obj[key]
     }
-    return output
-  }
+    }
+  return output
 }
 
 module.exports = {
