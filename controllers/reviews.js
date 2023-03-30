@@ -8,6 +8,7 @@ function create(req, res, next) {
     Recipe.findById(recipeId)
         .then(function (recipe) {
             recipe.reviews.push(req.body)
+            return movie.save()
         })
         .then(function (recipe) {
             res.redirect(`/recipes/${recipe._id}`)
