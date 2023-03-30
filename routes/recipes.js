@@ -9,7 +9,12 @@ router.route('/')
 
 router.get('/new', ensureLoggedIn, recipesCtrl.new)
 
-router.get('/:id', recipesCtrl.show)
+router.get('/:id/edit', recipesCtrl.edit)
+
+router.route('/:id')
+.get(recipesCtrl.show)
+.put(recipesCtrl.update)
+.delete(recipesCtrl.delete)
 
 
 
