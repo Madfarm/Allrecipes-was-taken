@@ -1,18 +1,4 @@
-navbar
-  
-
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-  text-decoration: underline;
-}
-
-
-body :not(nav) {
+body  {
   
     width: 600px;
     margin: 0 auto;
@@ -22,7 +8,21 @@ body :not(nav) {
     font-variant-ligatures: normal;
     font-size: 2rem;
     letter-spacing: 1px;
+    padding: 50px;
   }
+
+
+a {
+  color: #00B7FF;
+  text-decoration: underline;
+}
+
+
+
+  nav {
+    
+  }
+
 
   
     
