@@ -48,7 +48,7 @@ div.navbarContainer {
 }
 
 .navbarContainer>ul {
-  review-.review-list-style-type: none;
+  list-style-type: none;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -133,10 +133,12 @@ ul>li>a {
 #profile-card {
   text-align: center;
 }
-#recipe-page-header{
+
+#recipe-page-header {
   background-color: var(--blue);
 }
-#recipe-page{
+
+#recipe-page {
   margin: 0 auto;
   text-align: center;
   width: 60%;
@@ -146,18 +148,19 @@ ul>li>a {
   font-weight: 100;
   font-variant-ligatures: normal;
 }
-#page-ingredients > li{
+
+#page-ingredients>li {
   float: none;
   text-align: left;
 }
 
-#page-directions > li{
- 
+#page-directions>li {
+
   float: none;
   text-align: left;
 }
 
-#review-block{
+#review-block {
   text-align: center;
   background-color: var(--blue);
 }
@@ -167,7 +170,7 @@ ul>li>a {
   text-align: center;
   word-wrap: break-word;
   width: 100%;
-  
+
 }
 
 .review-list th,
