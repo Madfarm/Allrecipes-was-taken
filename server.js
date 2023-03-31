@@ -8,6 +8,8 @@ const session = require('express-session')
 const passport = require('passport')
 
 
+
+
 require("dotenv").config();
 require("./configs/database");
 require('./configs/passport');
@@ -21,6 +23,7 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8000);
 
 app.use(logger("dev"));
 app.use(express.json());
