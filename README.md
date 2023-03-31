@@ -4,7 +4,7 @@ Allrecipes Was Taken is a full-stack CRUD web application for hosting and sharin
 
 Allrecipes Was Taken's back-end architecture features a recipes router that uses RESTful routing to grab associated data. It also features an index router that uses google OAuth 2 in conjuction with Passport to add authentication for users
 
-    Allrecipes Was Taken was built in X days by:
+    Allrecipes Was Taken is a coding project built by:
     Katherine Sprague - Database Manger/Backend/Project Manager/Frontend
     Kelvin Lanier - Frontend/Designer/Researcher/Backend
     Anthony Scott - Backend/Researcher/Documenter/Github Owner
