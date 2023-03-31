@@ -29,7 +29,7 @@ div.navbarContainer {
 }
 
 .navbarContainer>ul {
-  list-style-type: none;
+  review-.review-list-style-type: none;
   overflow: hidden;
 
 
@@ -96,4 +96,201 @@ ul>li>a {
   border-radius: 1.875rem;
   padding: .9375rem;
   margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Show-page styling */
+#profile-card {
+  text-align: center;
+}
+#recipe-page-header{
+  background-color: var(--blue);
+}
+#recipe-page{
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-variant-ligatures: normal;
+}
+#page-ingredients > li{
+  float: none;
+  text-align: left;
+}
+
+#page-directions > li{
+ 
+  float: none;
+  text-align: left;
+}
+
+#review-block{
+  text-align: center;
+  background-color: var(--blue);
+}
+
+.review-list {
+  font-size: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  width: 100%;
+  
+}
+
+.review-list th,
+.review-list td {
+  padding: 10px;
+  max-width: 20%;
+}
+
+.review-list th {
+  border-bottom: 3px solid #424748;
+  font-weight: 700;
+  font-size: 20px;
 }
