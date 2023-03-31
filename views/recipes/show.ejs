@@ -1,24 +1,23 @@
 <%- include('../partials/header') %>
+   
 
-    <% console.log(recipe)%>
-    <table>
-        <thead>
-            <h4><%= recipe.userName %></h4>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer"></td>
-            </tr>
-        </tbody>
-        
-    </table>
+<div id="profile-card">
+    <h4><%= recipe.userName %></h4>
+    <img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer"> 
+</div>
 
-
-    <div>
-        <%= recipe.title %>
+<section id="recipe-page">
+    <div id="recipe-page-header">
+        <p><%= recipe.title %></p>
+        <p><%= recipe.difficulty %></p>
+        <p><%= recipe.category %></p>
+        <p><%= recipe.category2 %></p>
+        <p><%= recipe.time %> minutes </p>
     </div>
-    <div>
-        <ul>
+
+    <div id="ingredients-block">
+        <h4>Ingredients</h4>
+        <ul id="page-ingredients">
             <% recipe.ingredients.forEach(function(i) { %>
                 <li>
                     <%= i %>
@@ -26,8 +25,10 @@
                 <% }) %>
         </ul>
     </div>
+
     <div>
-        <ol>
+        <h4>Directions</h4>
+        <ol id="page-directions">
             <% recipe.directions.forEach(function(d) { %>
                 <li>
                     <%= d %>
@@ -35,22 +36,11 @@
                 <% }) %>
         </ol>
     </div>
-    <div>
-        <%= recipe.difficulty %>
-    </div>
-    <div>
-        <%= recipe.category %>
-    </div>
-    <div>
-        <%= recipe.category2 %>
-    </div>
-    <div>
-        <%= recipe.time %> minutes
-    </div>
+</section>
 
-    <section>
+    <section id="review-block">
         <h2>Reviews</h2>
-        <form action="/recipes/<%=recipe._id%>/reviews" method="POST">
+        <form action="/recipes/<%=recipe._id%>/reviews" method="POST" id="review-form">
             <label>Review:</label>
             <textarea name="content">Leave Your Review Here</textarea>
             <label>Rating:</label>
@@ -66,7 +56,7 @@
     </section>
 
     <% if(recipe.reviews.length){%>
-        <table>
+        <table class="review-list">
             <thead>
                 <tr>
                     <th>User</th>
