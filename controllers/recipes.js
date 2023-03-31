@@ -59,7 +59,7 @@ function newRecipe(req, res, next) {
   })
 }
 
-function create(req, res) {
+function create(req, res, next) {
   req.body.user = req.user._id
   req.body.userName = req.user.name
   req.body.userAvatar = req.user.userAvatar
