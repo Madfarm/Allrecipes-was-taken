@@ -184,3 +184,63 @@ ul>li>a {
   font-weight: 700;
   font-size: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Myrecipes page styling */
+#myrecipe-blocks{
+  background-color: var(--blue);
+  margin: 10vh;
+  padding: 1em;
+  border-radius: 2%;
+}
+/* End of myRecipes page styling */
