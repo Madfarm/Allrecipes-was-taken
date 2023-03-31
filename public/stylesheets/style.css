@@ -214,3 +214,16 @@ ul>li>a {
 }
 
 /* new.ejs CSS changes above */
+
+
+/* Myrecipes page styling */
+#myrecipe-blocks{
+  background-color: var(--blue);
+  margin: 10vh;
+  padding: 1em;
+  border-radius: 2%;
+}
+#myrecipes-title{
+  font-size: 40px;
+}
+/* End of myRecipes page styling */
