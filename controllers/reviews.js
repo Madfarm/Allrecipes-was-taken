@@ -7,6 +7,10 @@ module.exports = {
 function create(req, res, next) {
     Recipe.findById(req.params.id)
         .then(function (recipe) {
+            req.body.user = req.user._id
+            req.body.userName = req.user.name
+            req.body.userAvatar = req.user.avatar
+
             recipe.reviews.push(req.body)
             return recipe.save()
         })
