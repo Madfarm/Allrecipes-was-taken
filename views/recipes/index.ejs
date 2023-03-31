@@ -1,48 +1,53 @@
 <%- include('../partials/header') %>
 
-<div class="filter">
-    <form method="GET" action="/recipes">
-    <h3>Filter</h3>
-    <select name="difficulty">Difficulty
+  <div>
+    <form class="filter" method="GET" action="/recipes">
+      <h3>Filter</h3>
+      <select class="options" name="difficulty">Difficulty
         <option disabled selected></option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
-    </select><br>
+      </select><br>
 
-      <select name="category">Category
+      <select class="options" name="category">Category
         <option disabled selected></option>
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
         <option value="dessert">Dessert</option>
-    </select><br>
+      </select><br>
 
-      <select name="category2">Category'
+      <select class="options" name="category2">Category'
         <option disabled selected></option>
         <option value="vegetarian">Vegetarian</option>
         <option value="pescatarian">Pescatarian</option>
         <option value="vegan">Vegan</option>
-    </select><br>
+      </select><br>
       <button type="submit">Filter Recipes</button>
-</form>
+    </form>
 
-</div>    
+  </div>
 
 
 
-<% recipes.forEach(function(r) { %>
+  <% recipes.forEach(function(r) { %>
     <div class="recipes">
-    <a href="/recipes/<%= r._id %>">
-    <div>
-        <h3><%= r.title %></h3>
-       <h4><%= r.difficulty %></h4>
-    </a>
+      <a href="/recipes/<%= r._id %>">
+        <div class="each-recipe">
+          <h3>
+            <%= r.title %>
+          </h3>
+          <h4>
+            <%= r.difficulty %>
+          </h4>
+      </a>
 
-<% }) %>
-   </div>
+      <% }) %>
+    </div>
 
 
 
-</body>
-</html>
+    </body>
+
+    </html>
