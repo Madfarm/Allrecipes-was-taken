@@ -1,30 +1,38 @@
 <%- include('../partials/header') %>
 
-  <div>
+  <div class="form-filter-container">
     <form class="filter" method="GET" action="/recipes">
-      <h3>Filter</h3>
-      <select class="options" name="difficulty">Difficulty
-        <option disabled selected></option>
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-      </select><br>
+      <div class="input-container">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty" class="options" name="difficulty">
+          <option disabled selected></option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
 
-      <select class="options" name="category">Category
-        <option disabled selected></option>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-        <option value="dessert">Dessert</option>
-      </select><br>
-
-      <select class="options" name="category2">Category'
-        <option disabled selected></option>
-        <option value="vegetarian">Vegetarian</option>
-        <option value="pescatarian">Pescatarian</option>
-        <option value="vegan">Vegan</option>
-      </select><br>
+      <div class="input-container">
+        <label for="mealtime">Meal time</label>
+        <select id="mealtime" class="options" name="category">
+          <option disabled selected></option>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="dessert">Dessert</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="dietary-category">Dietary</label>
+        <select id="dietary-category" class="options" name="category2">
+          <option disabled selected></option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="pescatarian">Pescatarian</option>
+          <option value="vegan">Vegan</option>
+        </select>
+      </div>
       <button type="submit">Filter Recipes</button>
+
     </form>
 
   </div>
@@ -32,7 +40,7 @@
 
 
   <% recipes.forEach(function(r) { %>
-    <div class="recipes">
+    <div class="recipe-content">
       <a href="/recipes/<%= r._id %>">
         <div class="each-recipe">
           <h3>
@@ -42,12 +50,12 @@
             <%= r.difficulty %>
           </h4>
       </a>
-
-      <% }) %>
     </div>
+    <% }) %>
 
 
 
-    </body>
 
-    </html>
+      </body>
+
+      </html>
