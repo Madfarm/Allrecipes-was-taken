@@ -1,11 +1,17 @@
 <%- include('../partials/header') %>
-    <h4>
-        <%= recipe.userName %>
-    </h4>
 
-    <div>
-        <img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer">
-    </div>
+    <% console.log(recipe)%>
+    <table>
+        <thead>
+            <h4><%= recipe.userName %></h4>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer"></td>
+            </tr>
+        </tbody>
+        
+    </table>
 
 
     <div>
@@ -63,6 +69,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>User</th>
                     <th>Date</th>
                     <th>Review</th>
                     <th>Rating</th>
@@ -71,6 +78,9 @@
             <tbody>
                 <% recipe.reviews.forEach(function(r) { %>
                     <tr>
+                        <td>
+                            <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"><%= r.userName %>
+                        </td>
                         <td>
                             <%= r.createdAt.toLocaleDateString() %>
                         </td>

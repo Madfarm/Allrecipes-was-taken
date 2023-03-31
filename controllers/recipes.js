@@ -41,10 +41,10 @@ function newRecipe(req, res, next) {
   })
 }
 
-function create(req, res) {
+function create(req, res, next) {
   req.body.user = req.user._id
   req.body.userName = req.user.name
-  req.body.userAvatar = req.user.userAvatar
+  req.body.userAvatar = req.user.avatar
 
   req.body.ingredients = req.body.ingredients.trim()
   req.body.ingredients = req.body.ingredients.split(',').map(function (ingredient) { return ingredient.trim() })
