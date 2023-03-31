@@ -6,8 +6,10 @@
 
             <% userRecipes.forEach(function(recipe) { %>
                 <section id="myrecipe-blocks">
-                    <div>
+                    <div id="myrecipes-title">
+                        <a href="/recipes/<%= recipe._id %>">
                         <%= recipe.title %>
+                        </a>
                     </div>
                     <div>
                         <ul class="page-ingredients">

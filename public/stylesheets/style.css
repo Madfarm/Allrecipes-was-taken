@@ -243,4 +243,8 @@ ul>li>a {
   padding: 1em;
   border-radius: 2%;
 }
+
+#myrecipes-title{
+  font-size: 40px;
+}
 /* End of myRecipes page styling */
