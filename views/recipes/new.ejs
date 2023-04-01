@@ -1,57 +1,61 @@
 <%- include('../partials/header') %>
     <div class="new-recipe-form-container">
-    <form class="new-recipe-form" action="/recipes" method="POST">
-        <div class="recipe-input-container">
-            <label>Recipe Name
-                <input type="text" placeholder="e.g. Shrimp Scampi" name="title">
-            </label>
-        </div>
-        <div class="recipe-input-container">
-            <label>Ingredients
-                <textarea placeholder="Add ingredients seperated by commas" name="ingredients"></textarea>
-            </label>
-        </div>
-        <div class="recipe-input-container">
-            <label>Directions
-                <textarea placeholder="Add directions seperated by commas" name="directions"></textarea>
-            </label>
-        </div>
-        <div class="recipe-input-container">
-            <select name="difficulty">Difficulty
-                <option disabled selected></option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </div>
-        <div class="recipe-input-container">
-            <select name="category">Category
-                <option disabled selected></option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="dessert">Dessert</option>
-            </select>
-        </div>
+        <form class="new-recipe-form" action="/recipes" method="POST">
+            <div class="recipe-input-container">
+                <label>Recipe Name
+                    <input class="options" type="text" placeholder="e.g. Shrimp Scampi" name="title">
+                </label>
+            </div>
+            <div class="recipe-input-container">
+                <label>Ingredients
+                    <textarea class="options" placeholder="Add ingredients seperated by commas"
+                        name="ingredients"></textarea>
+                </label>
+            </div>
+            <div class="recipe-input-container">
+                <label>Directions
+                    <textarea class="options" placeholder="Add directions seperated by commas"
+                        name="directions"></textarea>
+                </label>
+            </div>
+            <div class="recipe-input-container">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty" class="options" name="difficulty">
+                    <option disabled selected></option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="recipe-input-container">
+                <label for="mealtime">Meal time</label>
+                <select id="mealtime" class="options" name="category">
+                    <option disabled selected></option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </div>
 
-        <div class="recipe-input-container">
+            <div class="recipe-input-container">
+                <label for="dietary-category">Dietary</label>
+                <select id="dietary-category" class="options" name="category2">
+                    <option disabled selected></option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="pescatarian">Pescatarian</option>
+                    <option value="vegan">Vegan</option>
+                </select>
+            </div>
+            <div class="recipe-input-container">
+                <label>Time
+                    <input class="options" type="number" placeholder="in minutes" name="time">
+                </label>
+            </div>
 
-            <select name="category2">Category'
-                <option disabled selected></option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="pescatarian">Pescatarian</option>
-                <option value="vegan">Vegan</option>
-            </select>
-        </div>
-        <div class="recipe-input-container">
-            <label>Time
-                <input type="number" placeholder="in minutes" name="time">
-            </label>
-        </div>
 
-
-        <button type="submit">Add Recipe</button>
-    </form>
+            <button type="submit">Add Recipe</button>
+        </form>
     </div>
     </body>
 

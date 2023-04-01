@@ -37,27 +37,24 @@
 
   </div>
 
+  <div class="recipe-content">
+    <% recipes.forEach(function(r) { %>
+      <a href="/recipes/<%= r._id %>">
+        <div class="each-recipe">
+          <h3>
+            <%= r.title %>
+          </h3>
+          <h4>
+            <%= r.difficulty %>
+          </h4>
 
-<!-- styling needs to be updated / container needs to be added  -->
-  <% recipes.forEach(function(r) { %>
-    <a href="/recipes/<%= r._id %>">
-    <div class="recipe-content">
-
-      <div class="each-recipe">
-        <h3>
-          <%= r.title %>
-        </h3>
-        <h4>
-          <%= r.difficulty %>
-        </h4>
-
-      </div>
+        </div>
       </a>
       <% }) %>
+  </div>
 
 
 
+  </body>
 
-        </body>
-
-        </html>
+  </html>

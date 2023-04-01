@@ -100,13 +100,12 @@ ul>li>a {
 .options {
   color: var(--orange);
   background-color: white;
-  border: solid 1.5px var(--orange);
+  border: solid 1px var(--orange);
   font-weight: 800;
-  border: 2px solid var(--orange);
   border-radius: 15px;
   padding: .5rem;
-  width: 12rem;
-  height: 2.5rem
+  min-width: 12rem;
+  min-height: 2.5rem
 }
 
 .recipe-content {
@@ -123,7 +122,7 @@ ul>li>a {
   padding: 20px;
   box-shadow: 0 0 0 2px rgb(255, 255, 255),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.1);
-  margin: auto 50px;
+  margin: 0 50px 20px;
   border-radius: 1.25rem;
   transition: .5s;
 }
