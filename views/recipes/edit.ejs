@@ -8,19 +8,18 @@
 </div>
         <div class="recipe-input-container">
         <label>Ingredients
-            <textarea type="text" placeholder="Add ingredients seperated by commas" name="ingredients"
-                value="<%= recipe.ingredients.join(', ')%>"></textarea>
+            <textarea placeholder="Add ingredients seperated by commas" name="ingredients"><%= recipe.ingredients.join(', ')%></textarea>
         </label>
     </div>
         <div class="recipe-input-container">
         <label>Directions
-            <textarea type="text" placeholder="Add directions seperated by commas" name="directions"
-                value="<%= recipe.directions.join(', ')%>"></textarea>
+            <textarea placeholder="Add directions seperated by commas" name="directions"><%= recipe.directions.join(', ')%></textarea>
 
         </label>
     </div>
         <div class="recipe-input-container">
         <select name="difficulty">Difficulty
+            
             <% let options=[ 'easy' , 'medium' , 'hard'];
             let selected = recipe.difficulty
             for (let i=0; i < options.length; i++ ) {
@@ -44,6 +43,7 @@
     </div>
         <div class="recipe-input-container">
         <select name="category2">Category
+            <option></option>
 
             <%  options=["vegetarian", "pescatarian", "vegan"]; 
             selected = recipe.category2
