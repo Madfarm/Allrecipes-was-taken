@@ -1,4 +1,18 @@
 <%- include('../partials/header') %>
+<%  
+    let total = 0;
+    recipe.reviews.forEach(function(r) { 
+        total += r.rating;
+    }) 
+    
+    let average = (total / recipe.reviews.length)
+    if(isNaN(average)){
+       average = "Recipe has not been reviewed yet"
+    } else {
+        average = `Rated at ${average.toFixed(2)}/5 stars`
+    }
+   
+%>
    
 
 <div id="profile-card">
@@ -9,6 +23,7 @@
 <section id="recipe-page">
     <div id="recipe-page-header">
         <h3><%= recipe.title %></h3>
+        <h4><%= average %></h4>
         <p><%= recipe.difficulty %></p>
         <p><%= recipe.category %></p>
         <p><%= recipe.category2 %></p>

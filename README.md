@@ -25,7 +25,9 @@ Allrecipes Was Taken's back-end architecture features a recipes router that uses
 
     As a user, I want to be able to filter the recipes by time of day(breakfast, lunch, dinner)  
 
-    As a user, I want to be able to see recipes by category  
+    As a user, I want to be able to see recipes by category
+
+    As a user, I want to be able to see what other people rate a recipe on average  
 
 ## C. Images
 >### MVP ERD
