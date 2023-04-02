@@ -48,6 +48,12 @@ div.navbarContainer {
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
 }
 
+img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
 .navbarContainer>ul {
   list-style-type: none;
   overflow: hidden;
@@ -127,8 +133,18 @@ ul>li>a {
   transition: .5s;
 }
 
+.each-recipe p {
+  margin: 0 .8rem;
+
+}
+
 .each-recipe:hover {
   scale: 1.03;
+}
+
+.index-view-avatar {
+  display: flex;
+  align-items: center;
 }
 
 /* Show-page styling */

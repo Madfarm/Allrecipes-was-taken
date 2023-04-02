@@ -40,14 +40,21 @@
   <div class="recipe-content">
     <% recipes.forEach(function(r) { %>
       <a href="/recipes/<%= r._id %>">
-        <div class="each-recipe">
-          <h3>
-            <%= r.title %>
-          </h3>
-          <h4>
-            <%= r.difficulty %>
-          </h4>
 
+        <div class="each-recipe">
+          <div>
+            <h3>
+              <%= r.title %>
+            </h3>
+            <h4>
+              <%= r.difficulty %>
+            </h4>
+          </div>
+          <div class="index-view-avatar"> <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer">
+           <p><%= r.userName %></p> 
+          </div>
+
+         
         </div>
       </a>
       <% }) %>
