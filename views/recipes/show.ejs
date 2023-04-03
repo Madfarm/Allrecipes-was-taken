@@ -1,47 +1,107 @@
 <%- include('../partials/header') %>
+<%  
+    let total = 0;
+    recipe.reviews.forEach(function(r) { 
+        total += r.rating;
+    }) 
+    
+    let average = (total / recipe.reviews.length)
+    if(isNaN(average)){
+       average = "Recipe has not been reviewed yet"
+    } else {
+        average = `Rated at ${average.toFixed(2)}/5 stars`
+    }
+   
+%>
+   
+
+<div id="profile-card">
     <h4><%= recipe.userName %></h4>
+    <img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer"> 
+</div>
 
-    <div>
-        <img alt="avatar" src="<%= recipe.userAvatar %>" referrerpolicy="no-referrer">
+<section id="recipe-page">
+    <div id="recipe-page-header">
+        <h3><%= recipe.title %></h3>
+        <h4><%= average %></h4>
+        <p><%= recipe.difficulty %></p>
+        <p><%= recipe.category %></p>
+        <p><%= recipe.category2 %></p>
+        <p><%= recipe.time %> minutes </p>
     </div>
 
-
-    <div>
-        <%= recipe.title %>
-    </div>
-    <div>
-        <ul>
-        <% recipe.ingredients.forEach(function(i) { %>
-            <li><%= i %></li>
-        <% }) %>
+    <div id="ingredients-block">
+        <h4>Ingredients</h4>
+        <ul class="page-ingredients">
+            <% recipe.ingredients.forEach(function(i) { %>
+                <li>
+                    <%= i %>
+                </li>
+                <% }) %>
         </ul>
     </div>
+
     <div>
-        <ol>
-        <% recipe.directions.forEach(function(d) { %>
-            <li><%= d  %></li>
-        <% }) %>
+        <h4>Directions</h4>
+        <ol class="page-directions">
+            <% recipe.directions.forEach(function(d) { %>
+                <li>
+                    <%= d %>
+                </li>
+                <% }) %>
         </ol>
     </div>
-    <div>
-        <%= recipe.difficulty %>
-    </div>
-    <div>
-        <%= recipe.category %>
-    </div>
-    <div>
-        <%= recipe.category2 %>
-    </div>
-    <div>
-        <%= recipe.time %> minutes
-    </div>
+</section>
 
+    <section id="review-block">
+        <h2>Reviews</h2>
+        <form action="/recipes/<%=recipe._id%>/reviews" method="POST" id="review-form">
+            <label>Review:</label>
+            <textarea name="content">Leave Your Review Here</textarea>
+            <label>Rating:</label>
+            <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
 
+    <% if(recipe.reviews.length){%>
+        <table class="review-list">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% recipe.reviews.forEach(function(r) { %>
+                    <tr>
+                        <td>
+                            <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"><%= r.userName %>
+                        </td>
+                        <td>
+                            <%= r.createdAt.toLocaleDateString() %>
+                        </td>
+                        <td>
+                            <%= r.content %>
+                        </td>
+                        <td>
+                            <%= r.rating %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No Reviews Yet</h5>
+            <%}%>
+                </body>
 
-
-
-
-
-    </body>
-
-    </html>
+                </html>

@@ -1,15 +1,15 @@
 const Recipe = require("../models/Recipe");
 
 //Helper function for parsing queries and making the filter more secure
-function parseQuery(obj, options){
+function parseQuery(obj, options) {
   const output = {}
 
-  for(let key in obj){
-    if (options.includes(key)&& obj[key]){
+  for (let key in obj) {
+    if (options.includes(key) && obj[key]) {
       output[key] = obj[key]
     }
-    return output
   }
+  return output
 }
 
 module.exports = {
@@ -23,8 +23,7 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  if(req.query){
-    Recipe.find(parseQuery(req.query, ['category', 'category2', 'difficulty']))
+  Recipe.find(parseQuery(req.query, ['category', 'category2', 'difficulty']))
     .then(function (recipes) {
       res.render("recipes/index", {
         title: "All Recipes",
@@ -34,23 +33,6 @@ function index(req, res, next) {
     .catch(function (err) {
       next(err)
     })
-
-  } else {
-    Recipe.find({})
-    .then(function (recipes) {
-      res.render("recipes/index", {
-        title: "All Recipes",
-        recipes
-      });
-    })
-    .catch(function (err) {
-      next(err)
-    })
-  }
-
-  
-
-
 }
 
 function newRecipe(req, res, next) {
@@ -59,10 +41,10 @@ function newRecipe(req, res, next) {
   })
 }
 
-function create(req, res) {
+function create(req, res, next) {
   req.body.user = req.user._id
   req.body.userName = req.user.name
-  req.body.userAvatar = req.user.userAvatar
+  req.body.userAvatar = req.user.avatar
 
   req.body.ingredients = req.body.ingredients.trim()
   req.body.ingredients = req.body.ingredients.split(',').map(function (ingredient) { return ingredient.trim() })
@@ -107,39 +89,45 @@ function edit(req, res, next) {
     })
 }
 
-function update(req, res, next){
-    const filter = {
-        _id: req.params.id, 
-        user: req.user._id
-    }
-    const update = {
-        title: req.body.title,
-        ingredients: req.body.ingredients,
-        directions: req.body.directions,
-        difficulty: req.body.difficulty,
-        category: req.body.category,
-        category2: req.body.category2,
-        time: req.body.time
-    }
-    Recipe.findOneAndUpdate(filter,update)
-    .then(function(recipe){
-        res.redirect(`/recipes/${recipe._id}`)
+function update(req, res, next) {
+  req.body.ingredients = req.body.ingredients.trim()
+  req.body.ingredients = req.body.ingredients.split(',').map(function (ingredient) { return ingredient.trim() })
+
+  req.body.directions = req.body.directions.trim()
+  req.body.directions = req.body.directions.split(',').map(function (direction) { return direction.trim() })
+  
+  const filter = {
+    _id: req.params.id,
+    user: req.user._id
+  }
+  const update = {
+    title: req.body.title,
+    ingredients: req.body.ingredients,
+    directions: req.body.directions,
+    difficulty: req.body.difficulty,
+    category: req.body.category,
+    category2: req.body.category2,
+    time: req.body.time
+  }
+  Recipe.findOneAndUpdate(filter, update)
+    .then(function (recipe) {
+      res.redirect(`/recipes/${recipe._id}`)
     })
     .catch(function (err) {
-        res.redirect(`/recipes/${req.params.id}`)
-      })
+      res.redirect(`/recipes/${req.params.id}`)
+    })
 
 }
 
-function destroyRecipe(req,res, next){
-  Recipe.deleteOne({_id: req.params.id})
-  .then(function(){
-    res.redirect(`/users/${req.user._id}/myrecipes`)
-  })
-  .catch(function(err){
-    next(err)
-  })
+function destroyRecipe(req, res, next) {
+  Recipe.deleteOne({ _id: req.params.id })
+    .then(function () {
+      res.redirect(`/users/${req.user._id}/myrecipes`)
+    })
+    .catch(function (err) {
+      next(err)
+    })
 }
 
- 
+
 
