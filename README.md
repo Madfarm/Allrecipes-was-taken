@@ -30,13 +30,23 @@ Allrecipes Was Taken's back-end architecture features a recipes router that uses
     As a user, I want to be able to see what other people rate a recipe on average  
 
 ## C. Images
->### MVP ERD
+>### ERDs
 
 ![MVP ERD](/public/images/MVP-ERD.png)
+![ERD](/public/images/erd.png)
+
 
 >###  Wireframe
 
 ![Wireframe](public/images/Wireframe.png)
+
+>### Using the app
+
+![Login](public/images/login.png)
+![Auth](public/images/auth.png)
+![Index](public/images/index.png)
+![Add Recipe](public/images/addrecipe.png)
+![MyRecipe](public/images/myrecipe.png)
 
 
 ## D. Technologies Used
