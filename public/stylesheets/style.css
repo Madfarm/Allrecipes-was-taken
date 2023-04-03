@@ -1,11 +1,249 @@
+:root {
+  --blue: #81cad6;
+  --yellow: #edcd44;
+  --orange: #dc3e26;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Karla', sans-serif;
+  font-weight: 100;
+  font-variant-ligatures: normal;
+  font-size: 1rem;
 }
 
 a {
-  color: #00B7FF;
   text-decoration: none;
+  color: var(--orange);
+  font-weight: 800;
 }
 
+button,
+button:hover {
+  color: var(--orange);
+  background-color: white;
+  border: 2px solid var(--orange);
+  font-weight: 800;
+  border-radius: 15px;
+  padding: .45rem;
+  transition: 0.3s;
+  height: 2.5rem;
+}
 
+button:hover {
+  color: white;
+  background-color: var(--orange);
+}
+
+div.navbarContainer {
+  display: flex;
+  font-size: 24px;
+  background-color: var(--yellow);
+  justify-content: flex-end;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.navbarContainer>ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+}
+
+ul>li {
+  float: left;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul>li>a {
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.form-filter-container {
+  width: 100%;
+  padding: 0 2.5rem;
+  margin-top: 2rem;
+}
+
+.filter {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.options {
+  color: var(--orange);
+  background-color: white;
+  border: solid 1px var(--orange);
+  font-weight: 800;
+  border-radius: 15px;
+  padding: .5rem;
+  min-width: 12rem;
+  min-height: 2.5rem
+}
+
+.recipe-content {
+  margin-top: 2rem;
+  /* border: 1px solid red; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.each-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.1);
+  margin: 0 50px 20px;
+  border-radius: 1.25rem;
+  transition: .5s;
+}
+
+.each-recipe p {
+  margin: 0 .8rem;
+
+}
+
+.each-recipe:hover {
+  scale: 1.03;
+}
+
+.index-view-avatar {
+  display: flex;
+  align-items: center;
+}
+
+/* Show-page styling */
+#profile-card {
+  text-align: center;
+}
+
+#recipe-page-header {
+  background-color: var(--blue);
+}
+
+#recipe-page {
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-variant-ligatures: normal;
+}
+
+.page-ingredients>li {
+  float: none;
+  text-align: left;
+}
+
+.page-directions>li {
+
+  float: none;
+  text-align: left;
+}
+
+#review-block {
+  text-align: center;
+  background-color: var(--blue);
+}
+
+.review-list {
+  font-size: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  width: 100%;
+
+}
+
+.review-list th,
+.review-list td {
+  padding: 10px;
+  max-width: 20%;
+}
+
+.review-list th {
+  border-bottom: 3px solid #424748;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.new-recipe-form-container {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.new-recipe-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--orange);
+  font-weight: 800;
+  border: solid 1.5px var(--orange);
+  border-radius: 15px;
+  padding: .5rem;
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.recipe-input-container {
+  color: var(--orange);
+  background-color: white;
+  font-weight: 800;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+/* new.ejs CSS changes above */
+
+
+/* Myrecipes page styling */
+#myrecipe-blocks {
+  background-color: var(--blue);
+  margin: 10vh;
+  padding: 1em;
+  border-radius: 2%;
+}
+
+#myrecipes-title {
+  font-size: 40px;
+}
+
+/* End of myRecipes page styling */
